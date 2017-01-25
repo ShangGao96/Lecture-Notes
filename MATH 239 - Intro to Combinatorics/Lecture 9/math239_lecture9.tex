@@ -113,7 +113,7 @@ $\qquad$
 	    edge (5);	    
 \end{tikzpicture}
 \end{center}
-Observe that only $K_3$ and $K_5$ satisfy this property that Euler was looking for. From this, we arrive at an observation: only graphs of odd degree are Eulerian circuits.
+Observe that only $K_3$ and $K_5$ satisfy this property that Euler was looking for. From this, we arrive at an observation: only graphs of even degree are Eulerian circuits.
 \subsection{Definition}
 An \textbf{Eulerian Circuit} of a graph $G$ is a closed walk that uses every edge exactly once.\\
 Naturally one would ask, \textit{when does $G$ have an Eulerian circuit}?
@@ -171,7 +171,7 @@ Before we prove this, let's define an easy lemma:
 \textit{If G is a graph will all even degrees and $e$ is an edge of $G$, then there exists a closed walk using no edge more than once and containing $e$}
 \end{center}
 \textbf{Proof of Lemma 1:} Let $W$ be a walk using no edge more than once and containing $e$, and subject to that $\vert E(W) \vert$ is maximised. Note $W$ exists since $e$ is such a walk. I claim that $W$ is closed.
-Let's prove this claim by contradiction. Suppose that $W$ is not closed. Then the first vertex of $W$ is not its last, so only an \underline{odd} number of edges incident with the last vertex $v$ are in $W$. Since $v$ has even degree, there exists an edge $f \not\in W$ and incident with $v$. But then, $W^\prime = W - f$ is a longer walk using no edge more than once and containing $e$, contradiction that $\vert E(W)\vert$ is maximized.\\\\
+Let's prove this claim by contradiction. Suppose that $W$ is not closed. Then the first vertex of $W$ is not its last, so only an \underline{odd} number of edges incident with the last vertex $v$ are in $W$. Since $v$ has even degree, there exists an edge $f \not\in W$ and incident with $v$. But then, $W^\prime = W + f$ is a longer walk using no edge more than once and containing $e$, contradiction that $\vert E(W)\vert$ is maximized.\\\\
 Now to the main proof. Let $W$ be a closed walk of $G$ using no edge more than once and subject to that, $\vert E(W) \vert$ is maximized. Note that $W$ exists since if there exists an edge $e$, then there exits a closed walk using no edge more than once and containing $e$ by the lemma. \\
 If $G$ has no edges, then $G$ trivially has an Eulerian circuit, so we're done. Otherwise, I claim that $W$ use all the edges of $G$. To prove this, we'll use contradiction. Suppose that there exists an edge $e$ not in $W$ with at least one end in $W$  since all edges are in same component. By the lemma, applied to $G^\prime = G - E(W)$, there exists a closed walk containing $W^\prime$. But then if you insert $W^\prime$ into $W$, you get a larger closed walk, contradicting the maximality.
 \end{itemize}
