@@ -104,7 +104,8 @@ The \textbf{distance} between two vertices $u$ and $v$, denoted $d(u,v)$ is the 
 \begin{center}
 \textit{If G has no odd cycles, then G is bipartite}
 \end{center}
-\textbf{Proof}: since $G$ is connected, $G$ has a spanning tree $T$. By proposition, $T$ has a bipartition $(A, B)$ such that all edges of $T$ have one end in $A$ and the other in $B$, as desired. I claim that $(A, B)$ is a bipartition such that all edges of $G$ have one end in $A$ and one end in $B$.\\
+\textbf{Proof}: It suffices to prove G is connected since if G is disconnected, we can prove that if each component has no odd cycles, each component is bipartite. By the previous theorem, G is bipartite since each component is bipartite.
+Since $G$ is connected, $G$ has a spanning tree $T$. By proposition, $T$ has a bipartition $(A, B)$ such that all edges of $T$ have one end in $A$ and the other in $B$, as desired. I claim that $(A, B)$ is a bipartition such that all edges of $G$ have one end in $A$ and one end in $B$.\\
 I'll prove this claim by contradiction. Suppose there exists an edge $e = uv$ with both ends in the same partition. But then $e$ is not in $E(T)$, since $(A,B)$ is a bipartition of $T$. We may assume without loss of generality that $u,v \in A$. Now, let $P = x_1x_2 \cdots x_k$ be a path in $T$ where $x_1 = u$ and $x_k = v$. \\We now claim that $x_k$ is odd: note that $x_1 = u$ is in $A$, but then $x_2$ is in $B$ because $x_1x_2 \in E(T)$. So inductively $x_i$ is in $A$ if $i$ is odd and in $B$ if $i$ is even. But $x_k = v$ is in $A$, so $k$ is odd.\\
 Back to our main claim: let $C = P + e = x_1x_2 \cdots x_kx_1$ is an odd cycle in $G$, a contradiction. This means that $(A,B)$ is a bipartition such that all edges of $G$ have one end in $A$ and the other in $B$, which proves this statement.
 
